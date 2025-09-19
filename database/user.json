@@ -1,6 +1,7 @@
 {
     "name": "Steve",
     "profession": "Software Engineer",
+    "work": "Software Engineer in IT company",
     "age": 20,
     "residence": "S.Korea",
     "adress": "S.Korea, Busan",
@@ -18,3 +19,4 @@
     "famous_words": ["World is Beautiful with Flowers"],
     "famous_name": ["Steve Jobs"]
   }
+  
