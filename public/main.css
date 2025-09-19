@@ -1,8 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
+
+body{
+    background:#F0F0F6;
+    margin: 0;
+    padding: 0;
+}
 .frame{
     width: 100%;
-    height: 100%;
+    height: 1600px;
     position: relative;
     display: flex;
     flex-direction: row;
@@ -23,19 +29,20 @@
 .main_frame .left_frame{
     position: relative;
     width: 305px;
-    height: 1330px;
-    background: var(--White, #FFF);
+    height: 1500px;
+    background:#FFFF;
     display: flex;
     flex-direction: column;
 }
 
 .main_frame .marginer{
     width: 220px;
-    height: 0px;
+    border: 1px solid #F0F0F6;
+    background: #F0F0F6;
     margin-left: 47px;
     margin-top: 54px;
     margin-bottom: 25px;
-    border: 1.5px solid #E0E0E0;
+    
 }
 
 /* left frame left1 start */
@@ -43,7 +50,7 @@
     width: 228px;
     height: 253px;
     margin-left: 47px;
-    margin-top: 47px;
+    margin-top: 150px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -400,11 +407,13 @@
 .main_frame .midd_frame{
     position: relative;
     width: 970px;
-    height: 1314px;
+    height: 1312px;
     margin-left: 30px;
     margin-right:27px;
     display: flex;
     flex-direction: column;
+    margin-top: 0px;
+    padding-top: 0px;
     /* background: aqua; */
 }
 
@@ -417,7 +426,7 @@
     background: var(--White, #FFF);
     display: flex;
     justify-content: space-between;
-    margin: 0 auto;
+    
 }
 .main_frame .midd_top_ellipse1{
     position: absolute;
@@ -490,7 +499,7 @@
 }
 .main_frame .midd_top-left-btn{
     display: flex;
-    border: none;
+    border:none;
     padding: 16px 32px;
     flex-direction: row;
     justify-content: center;
