@@ -626,6 +626,28 @@ body{
     margin-top: 23px;
 }   
 
+
+.midd_frame_price{
+    width: 970px;
+    height: 793px;
+    flex-shrink: 0;
+    background: #F0F0F6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.midd_frame_price-h1{
+    width: 971px;
+    height: 100px;
+    background: #F0F0F6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 150px;
+    font-family: Inter,sans-serif;
+}
+
 /* midd_bottom section end */
 /* midd section ends */
 
