@@ -71,18 +71,43 @@
 
 // A- Task
 
-function findnumberLetter(str, letter) {
-    let count = 0;
-    if(letter === undefined || letter.length !== 1) {
-        return "Bitta harf kiriting";
-    }else{
-    for (let i = 0; i < str.length; i++) {
-        if (str[i] === letter) {
-            count++;
-        }
-    }
-    return count;
-}
-}
+// function findnumberLetter(str, letter) {
+//     let count = 0;
+//     if(letter === undefined || letter.length !== 1) {
+//         return "Bitta harf kiriting";
+//     }else{
+//     for (let i = 0; i < str.length; i++) {
+//         if (str[i] === letter) {
+//             count++;
+//         }
+//     }
+//     return count;
+// }
+// }
 
-console.log(findnumberLetter("engineering", "e"));
+// console.log(findnumberLetter("engineering", "e"));
+
+
+
+
+//  ⭐️ Synchronous function vs Asynchronous function
+// Asynchronous: CALLBACK
+
+// DEFINE
+function qoldiqliBolish(a, b, callback) {
+    if (b === 0) {
+      callback("Mahraj nolga teng bolmaydi", null);
+    } else {
+      const c = a % b;
+      callback(null, c, true);
+    }
+  }
+  
+  // CALL
+  qoldiqliBolish(5, 3, (err, data) => {
+    if (err) console.log("ERROR:", err);
+    else {
+      console.log("data:", data);
+      console.log("MATIQLAR ...");
+    }
+  });

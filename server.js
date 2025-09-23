@@ -4,6 +4,8 @@ const app = express();
 const http = require("http");
 const fs = require("fs");
 
+// MongoDB code
+
 let user;
 fs.readFile("database/user.json", "utf-8", (err, data) => {
   if (err) {
@@ -34,12 +36,12 @@ app.get("/author", function (req, res) {
 });
 
 app.get("/", function (req, res) {
-  res.render("harid");
+  res.render("reja");
 });
 
 const server = http.createServer(app);
 let PORT = 3000;
 
 server.listen(PORT, function () {
-  console.log(`The server is running successfully on port: ${PORT}`);
+  console.log(`The server is running successfully on port: ${PORT}, http://localhost:${PORT}/`);
 });
