@@ -1,47 +1,26 @@
-console.log("Web Serverni boshlash");
-const express = require("express");
-const app = express();
 const http = require("http");
-const fs = require("fs");
+const mongodb = require("mongodb");
 
-// MongoDB code
 
-let user;
-fs.readFile("database/user.json", "utf-8", (err, data) => {
-  if (err) {
-    console.log("ERROR", err);
-  } else {
-    user = JSON.parse(data);
-  }
+let db;
+const connectionString = "mongodb+srv://4komil:K0m1lj0n%40%40@cluster0.tmfc7ru.mongodb.net/reja?retryWrites=true&w=majority";
+mongodb.connect(connectionString, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}, function (err, client) {
+    if (err) {
+        console.log("MongoDBga ulanishda xatolik yuz berdi");
+        throw err;
+    } else {
+        console.log("MongoDBga ulanish muvaffaqiyatli amalga oshirildi");
+        module.exports = client;
+        const app = require("./app");
+        const server = http.createServer(app);
+        let PORT = 3000;
+
+        server.listen(PORT, function () {
+            console.log(`The server is running successfully on port: ${PORT}, http://localhost:${PORT}/`);
+        });
+    }
 });
 
-// 1: Kirish code
-app.use(express.static("public"));
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-// 2: Session code
-// 3: Views code
-app.set("views", "views");
-app.set("view engine", "ejs");
-
-// 4: Routing code
-app.post("/create-item", (req, res) => {
-  console.log(req);
-  res.json({ test: "success" });
-});
-
-app.get("/author", function (req, res) {
-  res.render("author", { user: user });
-});
-
-app.get("/", function (req, res) {
-  res.render("reja");
-});
-
-const server = http.createServer(app);
-let PORT = 3000;
-
-server.listen(PORT, function () {
-  console.log(`The server is running successfully on port: ${PORT}, http://localhost:${PORT}/`);
-});
