@@ -53,7 +53,7 @@ document.addEventListener("click", function (e) {
     if (e.target.classList.contains("edit-me")) {
         let userInput = prompt(
             "Yangi reja kiriting",
-            e.target.parentElement.parentElement.querySelector(".item-text").innerHTML
+            e.target.parentElement.parentElement.querySelector(".item-text").innerText
         );
         if (userInput) {
             axios
