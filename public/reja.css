@@ -1,0 +1,30 @@
+body {
+  background-color: #b8bbd1; /* light purple background */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+  font-weight: 600;
+}
+
+.form-box {
+  max-width: 650px;
+  border-radius: 12px;
+  background-color: #f8f9fa; /* light card look */
+}
+
+#create-field {
+  min-width: 400px;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.add-btn {
+  border-radius: 20px;
+  padding: 8px 18px;
+}
+
+.delete-btn {
+  border-radius: 20px;
+  padding: 10px 25px;
+}
