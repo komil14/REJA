@@ -89,25 +89,15 @@
 
 
 
+// B task 
 
-//  ⭐️ Synchronous function vs Asynchronous function
-// Asynchronous: CALLBACK
-
-// DEFINE
-function qoldiqliBolish(a, b, callback) {
-    if (b === 0) {
-      callback("Mahraj nolga teng bolmaydi", null);
-    } else {
-      const c = a % b;
-      callback(null, c, true);
+function countDigits(str) {
+    let count = 0;
+    for (let i = 0; i < str.length; i++) {
+        if (!isNaN(str[i]) && str[i] !== ' ') {
+            count++;
+        }
     }
-  }
-  
-  // CALL
-  qoldiqliBolish(5, 3, (err, data) => {
-    if (err) console.log("ERROR:", err);
-    else {
-      console.log("data:", data);
-      console.log("MATIQLAR ...");
-    }
-  });
+    return count; 
+}
+console.log(countDigits("1a 2b3c 4d5e6f 7g8h9i0")); 
