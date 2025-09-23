@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>REJA</title>
   <!-- Bootstrap CSS -->
-  <link 
-    rel="stylesheet" 
-    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-  />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
   <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <div class="container text-center">
     <h1 class="display-4 my-4">REJA VA MAQSADLAR</h1>
@@ -19,15 +18,8 @@
     <div class="card shadow-sm form-box mx-auto">
       <div class="card-body">
         <form id="create-form" action="/create-item" method="POST" class="form-inline justify-content-center">
-          <input
-            id="create-field"
-            name="reja"
-            autofocus
-            autocomplete="off"
-            class="form-control mr-2"
-            type="text"
-            placeholder="Yangi reja kiriting..."
-          />
+          <input id="create-field" name="reja" autofocus autocomplete="off" class="form-control mr-2" type="text"
+            placeholder="Yangi reja kiriting..." />
           <button class="btn btn-primary add-btn">
             Yangi Reja Qoshish
           </button>
@@ -39,18 +31,23 @@
     <ul id="item-list" class="list-group">
       <% plans.map(function(item){ %>
         <li class="list-group-item d-flex justify-content-between align-items-center">
-          <span class="item-text"><%=item.reja%></span>
+          <span class="item-text">
+            <%=item.reja%>
+          </span>
           <div class="btn-group">
-            <button data-id = "<% item._id %>" class="btn btn-sm btn-outline-secondary edit-me">✏️ O'zgartirish</button>
-            <button data-id = "<% item._id %>" class="btn btn-sm btn-outline-danger delete-me">🗑 O'chirish</button>
+            <button data-id="<% item._id %>" class="btn btn-sm btn-outline-secondary edit-me">✏️ O'zgartirish</button>
+            <button data-id="<% item._id %>" class="btn btn-sm btn-outline-danger delete-me">🗑 O'chirish</button>
           </div>
         </li>
-      <% }) %>
+        <% }) %>
     </ul>
 
     <button class="btn btn-danger delete-btn mt-4" formaction="/delete-all">
       Hamma Rejalarni O'chirish
     </button>
   </div>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="/browser.js"></script>
 </body>
+
 </html>
