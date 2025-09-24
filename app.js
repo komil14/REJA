@@ -38,8 +38,18 @@ app.post("/create-item", (req, res) => {
   });
 });
 
+const fs = require("fs");
+const path = require("path");
 app.get("/author", function (req, res) {
-  res.render("author", { user: user });
+  const filePath = path.join(__dirname, "database", "user.json");
+  fs.readFile(filePath, "utf-8", (err, data) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).send("Xatolik yuz berdi");
+    }
+    const user = JSON.parse(data); 
+    res.render("author", { user: user });
+  });
 });
 
 app.post("/update-item", (req, res) => {
