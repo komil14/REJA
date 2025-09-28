@@ -91,13 +91,21 @@
 
 // B task 
 
-function countDigits(str) {
-    let count = 0;
-    for (let i = 0; i < str.length; i++) {
-        if (!isNaN(str[i]) && str[i] !== ' ') {
-            count++;
-        }
-    }
-    return count; 
-}
-console.log(countDigits("1a 2b3c 4d5e6f 7g8h9i0")); 
+// function countDigits(str) {
+//     let count = 0;
+//     for (let i = 0; i < str.length; i++) {
+//         if (!isNaN(str[i]) && str[i] !== ' ') {
+//             count++;
+//         }
+//     }
+//     return count; 
+// }
+// console.log(countDigits("1a 2b3c 4d5e6f 7g8h9i0")); 
+
+
+// C task
+
+function checkString(str1,str2){
+    return str1.trim().split("").sort().join() === str2.trim().split("").sort().join()
+ }
+ console.log(checkString("Jacob", " bocaJ"))
