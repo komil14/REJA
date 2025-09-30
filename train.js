@@ -1,5 +1,6 @@
 // console.log("Jack Ma maslahatlari");
 
+
 // const list = [
 //   "yaxshi talaba boling", // 0–20
 //   "togri boshliq tanlang va koproq hato qiling", // 20–30
@@ -105,7 +106,48 @@
 
 // C task
 
-function checkString(str1,str2){
-    return str1.trim().split("").sort().join() === str2.trim().split("").sort().join()
- }
- console.log(checkString("Jacob", " bocaJ"))
+// function checkString(str1,str2){
+//     return str1.trim().split("").sort().join() === str2.trim().split("").sort().join()
+//  }
+//  console.log(checkString("Jacob", " bocaJ"))
+
+
+// D  Task
+
+const Shop = {
+    init(non, lagmon, cola) {
+        this.non = non;
+        this.lagmon = lagmon;
+        this.cola = cola;
+    },
+    qoldiq() {
+        const now = new Date();
+        const hours = now.getHours().toString().padStart(2, '0');
+        const minutes = now.getMinutes().toString().padStart(2, '0');
+        console.log(`Hozir ${hours}:${minutes}da ${this.non}ta non, ${this.lagmon}ta lagmon va ${this.cola}ta cola mavjud!`);
+    },
+    sotish(product, quantity) {
+        if (this[product] !== undefined && this[product] >= quantity) {
+            this[product] -= quantity;
+            console.log(`${quantity}ta ${product} sotildi.`);
+        } else {
+            console.log(`Kechirasiz, yetarli ${product} yo'q.`);
+        }
+    },
+    qabul(product, quantity) {
+        if (this[product] !== undefined) {
+            this[product] += quantity;
+            console.log(`${quantity}ta ${product} qabul qilindi.`);
+        } else {
+            console.log(`Kechirasiz, bunday mahsulot mavjud emas.`);
+        }
+    }               
+    
+}
+
+Shop.init(4, 5, 2);
+Shop.qoldiq();
+Shop.sotish('non', 3);
+Shop.qabul('cola', 4);
+Shop.qabul('non', 4);
+Shop.qoldiq();  

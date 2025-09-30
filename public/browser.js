@@ -59,10 +59,10 @@ document.addEventListener("click", function (e) {
             axios
                 .post("/update-item", { id: e.target.getAttribute("data-id"), reja: userInput })
                 .then(() => {
-                    e.target.parentElement.parentElement.querySelector(".item-text").innerHTML = userInput;
+                    e.target.parentElement.parentElement.querySelector(".item-text").innerHTML = `${userInput} <span style="font-style: italic; color: grey;" class="edited-label">(Edited)</span>`;
                 })
                 .catch(() => {
-                    console.log("Qaytadan urinib ko'ring");
+                    console.log("Qaytadan urinib ko'ring"); 
                 });
         }
     }
