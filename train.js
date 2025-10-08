@@ -155,7 +155,26 @@
 
 // E Task
 
-const getReverseString = (str) => {
-    return str.split("").reverse().join("");
-};
-console.log(getReverseString("hello"));
+// const getReverseString = (str) => {
+//     return str.split("").reverse().join("");
+// };
+// console.log(getReverseString("hello"));
+
+
+// F Task
+
+
+function findDoublers(str) {
+    const charCount = {};
+    for (let char of str) {
+        if (charCount[char]) {
+            return true; 
+        }
+        charCount[char] = 1;
+    }
+    return false; 
+}
+
+console.log(findDoublers("hello"));
+console.log(findDoublers("world")); 
+console.log(findDoublers("w")); 
